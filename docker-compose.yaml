@@ -2,7 +2,9 @@ version: "3.3"
 
 services:
   keycloak:
-    image: jboss/keycloak:16.1.0
+    image: jboss/keycloak:18.0.2
+    command:
+      - start-dev
     environment:
       KEYCLOAK_USER: "admin"
       KEYCLOAK_PASSWORD: "1234"
@@ -13,4 +15,3 @@ services:
     - 5005:8787
     volumes:
     - ./target/libs/RegistrationUsername-1.2.jar:/opt/jboss/keycloak/standalone/deployments/RegistrationUsername-1.2.jar
-
