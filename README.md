@@ -11,3 +11,7 @@ by offering a Replacement to the RegistrationUserCreation Authenticator.
 4. add RegistrationUsernameGenerator to the flow
 5. move RegistrationUsernameGenerator to the top of the Form Flow
 5. (optional) set the prefix, by configuring the RegistrationUsernameGenerator Execution
+
+# Issues
+
+Post your issues at https://git.fairkom.net/fairlogin/keycloak-emailvalidator/-/issues
