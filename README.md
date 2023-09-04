@@ -14,4 +14,4 @@ by offering a Replacement to the RegistrationUserCreation Authenticator.
 
 # Issues
 
-Post your issues at https://git.fairkom.net/fairlogin/keycloak-emailvalidator/-/issues
+Post your issues at https://git.fairkom.net/fairlogin/keycloak-usernamegenerator/-/issues
