@@ -6,7 +6,7 @@
 
     <groupId>com.osalliance.keycloak.RegistrationUserCreationPrefixed</groupId>
     <artifactId>RegistrationUsername</artifactId>
-    <version>1.1</version>
+    <version>${keycloak.version}</version>
     <name>RegistrationUsername</name>
 
     <properties>
@@ -14,10 +14,9 @@
 
         <maven.compile.source>11</maven.compile.source>
         <maven.compile.target>11</maven.compile.target>
-        <wildfly.version>21.0.1.Final</wildfly.version>
-        <keycloak.version>16.1.0</keycloak.version>
+        <keycloak.version>23.0.1</keycloak.version>
         <log4j.version>1.2.17</log4j.version>
-
+	<junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
@@ -54,6 +53,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
+            <version>${junit.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -63,7 +63,7 @@
 
     </dependencies>
 
-    <dependencyManagement>
+<!--    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.wildfly.bom</groupId>
@@ -73,7 +73,7 @@
                 <version>${wildfly.version}</version>
             </dependency>
         </dependencies>
-    </dependencyManagement>
+    </dependencyManagement>-->
 
     <repositories>
         <repository>

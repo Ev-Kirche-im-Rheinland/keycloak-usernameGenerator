@@ -23,7 +23,7 @@ import org.keycloak.userprofile.UserProfileContext;
 import org.keycloak.userprofile.UserProfileProvider;
 import org.keycloak.userprofile.ValidationException;
 
-import javax.ws.rs.core.MultivaluedMap;
+import jakarta.ws.rs.core.MultivaluedMap;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class RegistrationUsernameGenerator implements FormAction {
 
         KeycloakSession session = context.getSession();
         UserProfileProvider profileProvider = session.getProvider(UserProfileProvider.class);
-        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION_USER_CREATION, formData);
+        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION, formData);
         String email = profile.getAttributes().getFirstValue(UserModel.EMAIL);
 
         String username = profile.getAttributes().getFirstValue(UserModel.USERNAME);
@@ -115,7 +115,7 @@ public class RegistrationUsernameGenerator implements FormAction {
         formData.put(UserModel.USERNAME,usernames);
 
         UserProfileProvider profileProvider = session.getProvider(UserProfileProvider.class);
-        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION_USER_CREATION, formData);
+        UserProfile profile = profileProvider.create(UserProfileContext.REGISTRATION, formData);
         UserModel user = profile.create();
 
         user.setEnabled(true);
