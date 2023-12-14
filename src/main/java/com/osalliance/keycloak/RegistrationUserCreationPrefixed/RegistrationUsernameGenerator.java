@@ -76,30 +76,13 @@ public class RegistrationUsernameGenerator implements FormAction {
         String firstName = formData.getFirst(UserModel.FIRST_NAME);
         String lastName = formData.getFirst(UserModel.LAST_NAME);
 
-        username = firstName+"."+lastName;
 
+	String prefix=null;
         if(context.getAuthenticatorConfig().getConfig() != null && context.getAuthenticatorConfig().getConfig().containsKey(RegistrationUsernameGeneratorFactory.PROVIDER_PREFIX)){
-            username = context.getAuthenticatorConfig().getConfig().get(RegistrationUsernameGeneratorFactory.PROVIDER_PREFIX)+"."+username;
+            prefix = context.getAuthenticatorConfig().getConfig().get(RegistrationUsernameGeneratorFactory.PROVIDER_PREFIX);
         }
 
-
-        UserModel alreadyExistingUser = context.getSession().users().getUserByUsername(context.getRealm(),username);
-
-        if(alreadyExistingUser != null){
-           int index = 2;
-           while (true){
-               String searchUsername = username+index;
-               alreadyExistingUser = context.getSession().users().getUserByUsername(context.getRealm(), searchUsername);
-
-               if(alreadyExistingUser == null){
-                   break;
-               }
-               index++;
-
-           }
-           username = username+index;
-
-        }
+	username = UsernameGenerator.generate_username(context.getSession(),context.getRealm(),prefix,firstName,lastName,true);
 
         EventBuilder event = context.getEvent();
         event.detail(Details.USERNAME, username);

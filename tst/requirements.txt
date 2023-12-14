@@ -1,0 +1,6 @@
+ecs_logging
+lxml
+peewee
+pyXMLSecurity
+python-keycloak
+requests
