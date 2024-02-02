@@ -124,11 +124,11 @@ public class AdminRealmResourceProviderUsernameGeneratorResource {
         String username = rep.getUsername();
 	String firstname= rep.getFirstName();
         String lastname= rep.getLastName();
-	if (ObjectUtil.isBlank(firstname) || ObjectUtil.isBlank(lastname)) {
-            logger.warn("Could not create user - firstname or lastname is blank");
-            throw ErrorResponse.error("Could not create user - firstname or lastname is blank", Response.Status.BAD_REQUEST);
-
-	}
+//	if (ObjectUtil.isBlank(firstname) || ObjectUtil.isBlank(lastname)) {
+//            logger.warn("Could not create user - firstname or lastname is blank");
+//            throw ErrorResponse.error("Could not create user - firstname or lastname is blank", Response.Status.BAD_REQUEST);
+//
+//	}
 
         if(realm.isRegistrationEmailAsUsername()) {
             logger.warn("Could not create user - isRegistrationEmailAsUsername is set");
