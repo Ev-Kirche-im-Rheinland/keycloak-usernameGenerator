@@ -16,6 +16,7 @@ public class UsernameGenerator {
 		target=target.replace("ü","ue");
 		target=target.replace("ß","ss");
 		target=target.replace("š","s");
+		target=target.replace("ñ","n");
 		target=target.replace("&amp"," ");
 		target=target.replace("&"," ");
 		return target.trim();
